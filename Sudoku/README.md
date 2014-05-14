@@ -14,7 +14,7 @@ SudokuAniapi
 
 A notação é a seguinte:
 
-![Mapa de campos](https://raw.githubusercontent.com/AnisanWesley/SudokuAniapi/master/image/sudoku.jpg)
+![Mapa de campos](https://raw.githubusercontent.com/AnisanWesley/anisan-games/master/Sudoku/image/sudoku.jpg)
 * **Q** representa o Quadrante, vem seguido de uma letra de A a I correspondente.
 * **L** representa a Linha, vem com o número correspondente.
 * **C** representa a coluna
@@ -26,7 +26,7 @@ A notação é a seguinte:
 * Para zerar o campo chame `_board.RemoveCampo` ou adicione um campo passando o valor `0`.
 * Para verificar se o jogo está finalizado, basta chamar `_board.VerificaSeCamposCompletos`, este retornará verdadeiro caso todos os campos sejam válidos e o sudoku esteja resolvido.
  
-Veja os [Testes unitários](https://github.com/AnisanWesley/SudokuAniapi/tree/master/Test) para mais detalhes sobre a forma de usar.
+Veja os [Testes unitários](https://github.com/AnisanWesley/anisan-games/tree/master/Sudoku/Test) para mais detalhes sobre a forma de usar.
 
 ###Forma de resolver:
 Há também a classe SudokuResolver, ela tanto resolve um jogo quanto os cria.
