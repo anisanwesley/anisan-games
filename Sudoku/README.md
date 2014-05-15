@@ -14,7 +14,7 @@ Sudoku
 
 A notação é a seguinte:
 
-![Mapa de campos](https://raw.githubusercontent.com/AnisanWesley/anisan-games/master/Sudoku/image/sudoku.jpg)
+![Mapa de campos](https://raw.githubusercontent.com/AnisanWesley/anisan-games/master/res/sudoku.jpg)
 * **Q** representa o Quadrante, vem seguido de uma letra de A a I correspondente.
 * **L** representa a Linha, vem com o número correspondente.
 * **C** representa a coluna
