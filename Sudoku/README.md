@@ -1,4 +1,4 @@
-SudokuAniapi
+Sudoku
 ============
 
 ###Forma de usar:
