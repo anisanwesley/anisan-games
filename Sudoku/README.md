@@ -1,5 +1,8 @@
 Sudoku
 ============
+**Veja os [Testes unitários](https://github.com/AnisanWesley/anisan-games/tree/master/Sudoku/Test) para mais detalhes sobre a forma de usar.**
+
+**Baixe este [Aplicativo](https://github.com/AnisanWesley/anisan-games/tree/master/Sudoku/Sample) que foi feito utilizando esta API.**
 
 ###Forma de usar:
 
@@ -26,9 +29,6 @@ A notação é a seguinte:
 * Para zerar o campo chame `_board.RemoveCampo` ou adicione um campo passando o valor `0`.
 * Para verificar se o jogo está finalizado, basta chamar `_board.VerificaSeCamposCompletos`, este retornará verdadeiro caso todos os campos sejam válidos e o sudoku esteja resolvido.
  
-**Veja os [Testes unitários](https://github.com/AnisanWesley/anisan-games/tree/master/Sudoku/Test) para mais detalhes sobre a forma de usar.**
-**Baixe este [aplicativo](https://github.com/AnisanWesley/anisan-games/tree/master/Sudoku/Sample/Sudoku.zip) feito utilizando esta API.**
-
 ###Forma de resolver:
 Há também a classe SudokuResolver, ela tanto resolve um jogo quanto os cria.
 
