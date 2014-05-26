@@ -27,6 +27,7 @@ A notação é a seguinte:
 * Para verificar se o jogo está finalizado, basta chamar `_board.VerificaSeCamposCompletos`, este retornará verdadeiro caso todos os campos sejam válidos e o sudoku esteja resolvido.
  
 **Veja os [Testes unitários](https://github.com/AnisanWesley/anisan-games/tree/master/Sudoku/Test) para mais detalhes sobre a forma de usar.**
+**Baixe este [aplicativo](https://github.com/AnisanWesley/anisan-games/tree/master/Sudoku/Sample/Sudoku.zip) feito utilizando esta API.**
 
 ###Forma de resolver:
 Há também a classe SudokuResolver, ela tanto resolve um jogo quanto os cria.
