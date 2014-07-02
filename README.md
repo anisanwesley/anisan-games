@@ -17,3 +17,4 @@ Games that I am thinking in put here
 * Shogi 
 * Ludo
 * Uno
+* [And all then](http://pt.wikipedia.org/wiki/Anexo:Lista_de_jogos_de_tabuleiro)
