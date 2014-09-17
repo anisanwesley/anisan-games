@@ -1,0 +1,62 @@
+﻿::AniworldRPG é um jogo onde você deve sobreviver em uma cidade pós-apocaliptica,
+onde seu personagem deve ser uma mistura equilibrada de força, inteligência e agilidade
+boa o suficiente para que ele cumpra seus objetivos no jogo e NÂO MORRA.
+
+Este desafio consiste da criação de seu personagem, há uma fábrica de personagems que irá
+validar os atributos que você passará para ela, e assim criar seus personagems.
+
+Você pode Criar Vários tipos de classes, raças e profissoes que definem atributos e
+equipamentos de acordo com o que sua criatividade permitir
+
+::O personagem consiste dê:
+
+- Nome
+
+Quantitativos
+- Quantidade de HP
+- Quantidade de Mana
+- Quantidade de Stamina
+
+Qualitativos
+- Raça
+- Classe
+- Profissão
+
+Descritivos
+- Cota
+- Calcas
+- Sapatos
+- Bracadeiras
+- Capacete
+- Arma
+
+Só é possivel alterar Nome, Raça, Classe e Profissão, e estes por sua vez,
+afetarão equipamento e atributos
+(ex: ao atribuir seu personagem como mago, ele receberá uma quantidade extra de mana, e um chapéu)
+
+::Condições
+- Raças podem alterar APENAS atributos quantitativos (hp, mana, stamina)
+- Classes podem alterar tanto atributos quantitativos quanto descritivos
+- Profissões podem alterar APENAS atributos descritivos (equipamento)
+
+Os delegates serão criados e passados para que uma fábrica os chame, esta fábrica deverá ser capaz
+de receber delegates para criação de Raças, Classes e Profissões, e invoca-los para que seus atributos
+e equipamentos sejam manipulados
+
+Então a ideia é criar delegates para configurar o personagem e executa-los atravéz da fábrica
+
+Esta fábrica também terá o método GetPersonagem() que deverá validar se não está faltando nenhuma
+propriedade do personagem, então retorna-lo
+(ex: não poderá vir um personagem sem uma classe ou com falta de equipamento) 
+
+Por fim, deve-se listar todas as propriedades do personagem.
+
+Bom jogo o/
+
+
+
+
+
+
+
+
