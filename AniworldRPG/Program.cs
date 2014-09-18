@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GeradorRPG
 {
@@ -270,7 +266,6 @@ namespace GeradorRPG
                 var rnd = new Random();
                 try
                 {
-                    var nomes = File.ReadAllLines("nomes.txt");
                     fac.StartPersonagemCreation(nomes[rnd.Next(0,nomes.Length)]);
 
 
@@ -335,5 +330,13 @@ namespace GeradorRPG
             Console.WriteLine('\n');
             Console.WriteLine(sb);
         }
+     private static string[] nomes = new[]
+        {
+            "Rá", "Toth", "Anúbis", "Bastet", "Hathor", "Hórus", "Khnum", "Maet", "Ptah", "Seth", "Sobek", "Osíris", "Ísis",
+            "Tefnut", "Chu", "Geb", "Zeus", "Afrodite", "Ares", "Hades", "Hera", "Poseidon", "Eros", "Héstia", "Apolo",
+            "Ártemis", "Deméter", "Dionísio", "Hermes", "Hefesto", "Crono", "Gaia"
+        };
     }
 }
+
+    
