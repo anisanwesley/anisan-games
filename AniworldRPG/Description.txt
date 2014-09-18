@@ -21,6 +21,7 @@ Qualitativos
 - Raça
 - Classe
 - Profissão
+- Moradia
 
 Descritivos
 - Cota
@@ -38,6 +39,7 @@ afetarão equipamento e atributos
 - Raças podem alterar APENAS atributos quantitativos (hp, mana, stamina)
 - Classes podem alterar tanto atributos quantitativos quanto descritivos
 - Profissões podem alterar APENAS atributos descritivos (equipamento)
+- Moradias assim como classes, alteram apenas atributos quantitativos
 
 Os delegates serão criados e passados para que uma fábrica os chame, esta fábrica deverá ser capaz
 de receber delegates para criação de Raças, Classes e Profissões, e invoca-los para que seus atributos

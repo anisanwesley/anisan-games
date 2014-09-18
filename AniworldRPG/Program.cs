@@ -185,6 +185,52 @@ namespace GeradorRPG
 
             #endregion
 
+            #region Moradias
+
+            #region Oceanicas
+
+            MoradiaHandler addOceano = personagem =>
+            {
+                personagem.Moradia = "Oceano";
+                personagem.Mana += 5000;
+            };
+            MoradiaHandler removeOceano = personagem =>
+            {
+                personagem.Mana -= 5000;
+            };
+
+            #endregion
+
+            #region Vulcânicas
+
+            MoradiaHandler addVulcanico = personagem =>
+            {
+                personagem.Moradia = "Vulcão";
+                personagem.HP += 5000;
+            };
+            MoradiaHandler removeVulcanico = personagem =>
+            {
+                personagem.HP -= 5000;
+            };
+
+            #endregion
+
+            #region Florestalicas
+
+            MoradiaHandler addFlorestalicas = personagem =>
+            {
+                personagem.Moradia = "Mato";
+                personagem.Stamina += 5000;
+            };
+            MoradiaHandler removeFlorestalicas = personagem =>
+            {
+                personagem.Stamina -= 5000;
+            };
+
+            #endregion
+
+            #endregion
+
             #endregion
 
             #region Criando um personagem
@@ -198,6 +244,7 @@ namespace GeradorRPG
             fac.AttributeClass(addLadrao);
             fac.AttributeClass(addGuerreiro);
             fac.DismissClass(removeLadrao);
+            fac.AttributeMoradia(addOceano);
             
             fac.AttributeProfissao(addMensageiro);
 
@@ -229,12 +276,14 @@ namespace GeradorRPG
 
                     var racas = new RacaHandler[] { addAnao, addElfo, addCyborg };
                     var classes = new ClasseHandler[] { addGuerreiro, addMago, addLadrao };
-                    var profissoes = new ProfissaoHandler[]{addFerreiro, addMensageiro, addAssassino};
+                    var profissoes = new ProfissaoHandler[] { addFerreiro, addMensageiro, addAssassino };
+                    var moradias = new MoradiaHandler[] { addOceano, addVulcanico, addFlorestalicas };
 
 
                     fac.AttributeRace(racas[rnd.Next(0, 3)]);
                     fac.AttributeClass(classes[rnd.Next(0, 3)]);
                     fac.AttributeProfissao(profissoes[rnd.Next(0, 3)]);
+                    fac.AttributeMoradia(moradias[rnd.Next(0, 3)]);
 
 
                     EscreverPersonagem(fac);
@@ -257,10 +306,10 @@ namespace GeradorRPG
         private static void EscreverPersonagem(PersonagensFactory fac)
         {
             Console.Clear();
-            Personagem p;
-            p = fac.GetPersonagem();
+            var p = fac.GetPersonagem();
 
             var sb = new StringBuilder();
+            sb.AppendLine(p.ToString());
             sb.AppendLine("Nome: " + p.Nome);
 
             sb.AppendLine("\nAtributos:");
@@ -273,6 +322,7 @@ namespace GeradorRPG
             sb.AppendLine("Raca: " + p.Raca);
             sb.AppendLine("Classes: " + p.Classes);
             sb.AppendLine("Profissao: " + p.Profissao);
+            sb.AppendLine("Moradia: " + p.Moradia);
 
             sb.AppendLine("\nFunção no mundo:");
             sb.AppendLine("Cota: " + p.Cota);
@@ -282,7 +332,6 @@ namespace GeradorRPG
             sb.AppendLine("Capacete: " + p.Capacete);
             sb.AppendLine("Arma: " + p.Arma);
 
-            Console.WriteLine(p);
             Console.WriteLine('\n');
             Console.WriteLine(sb);
         }

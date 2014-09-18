@@ -19,6 +19,7 @@ namespace GeradorRPG
         public string Raca { get; set; }
         public string Classes { get; set; }
         public string Profissao { get; set; }
+        public string Moradia { get; set; }
 
         //Equipamento
         public string Cota { get; set; }
@@ -32,7 +33,7 @@ namespace GeradorRPG
        public Personagem()
        {
            HP  = Mana = Stamina = 1000;
-           Raca = Classes = Profissao = Cota = Calcas = Sapatos = Bracadeiras = Capacete = Arma = "";
+           Raca = Classes = Profissao = Cota = Calcas = Sapatos = Bracadeiras = Capacete = Arma = Moradia = string.Empty; ;
        }
 
 
@@ -40,7 +41,7 @@ namespace GeradorRPG
        
        public override string ToString()
        {
-           return String.Format("{0}, {1} que é {2}, do tipo {3}",Nome,Raca,Profissao,Classes);
+           return String.Format("{0}, {1} do {4} que é {2}, do tipo {3}", Nome, Raca, Profissao, Classes, Moradia);
        }
 
        internal void RemoverClasse(string classe)

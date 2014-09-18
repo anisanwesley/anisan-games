@@ -9,6 +9,7 @@ namespace GeradorRPG
     public delegate void RacaHandler(Personagem personagem);
     public delegate void ClasseHandler(Personagem personagem);
     public delegate void ProfissaoHandler(Personagem personagem);
+    public delegate void MoradiaHandler(Personagem personagem);
     
     public class PersonagensFactory
     {
@@ -29,6 +30,8 @@ namespace GeradorRPG
                 throw new Exception("Seu personagem não possui raça, chame AttributeRace(passando uma raça)");
             if (String.IsNullOrWhiteSpace(_personagem.Classes))
                 throw new Exception("Seu personagem não possui classes, chame AttributeClasse(passando uma classe)");
+            if (String.IsNullOrWhiteSpace(_personagem.Moradia))
+                throw new Exception("Seu personagem não possui moradia, chame AttributeMoradia(passando uma moradia)");
 
 
             if (String.IsNullOrWhiteSpace(_personagem.Cota))
@@ -68,6 +71,23 @@ namespace GeradorRPG
                 throw new ArgumentException("Personagem não possui raça!");
 
             _personagem.Raca = "";
+            handler(_personagem);
+
+        }
+        public void AttributeMoradia(MoradiaHandler handler)
+        {
+            if (!String.IsNullOrWhiteSpace(_personagem.Moradia))
+                throw new ArgumentException("Personagem já possui uma Moradia!");
+
+            handler(_personagem);
+        }
+
+        public void DismissMoradia(MoradiaHandler handler)
+        {
+            if (String.IsNullOrWhiteSpace(_personagem.Moradia))
+                throw new ArgumentException("Personagem é sem teto!");
+
+            _personagem.Moradia = string.Empty; ;
             handler(_personagem);
 
         }
