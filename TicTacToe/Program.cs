@@ -86,7 +86,10 @@ namespace TicTacToe
                 var y = Convert.ToInt32(split[1]);
 
                 var square = board.Squares.First(a => a.PX == x && a.PY == y);
-                square.Toe = Toe.X;
+                
+				 if (square.Toe != Toe._) return false;
+				 
+				 square.Toe = Toe.X;
 
                 return true;
             }
@@ -115,6 +118,9 @@ namespace TicTacToe
             if (almosts.Count==0)
             {
                var avaliable =  board.Squares.FindAll(x => x.Toe == Toe._);
+			   
+			     if (avaliable.Count == 0) return;
+				 
                 avaliable[rnd.Next(0, avaliable.Count - 1)].Toe = Toe.O;
             }
             else
@@ -194,6 +200,10 @@ namespace TicTacToe
         public Result GameResult {
             get
             {
+			
+			 if (Areas.All(x => x.Full))
+                    return Result.Draw;
+					
                 if (Areas.Any(x => x.Finished))
                 {
                     return GetWinner();
@@ -238,9 +248,18 @@ namespace TicTacToe
             }
         }
 
-        public bool Finished { get
+      public bool Finished
+        {
+            get
             {
                 return Squares[0].Toe == Squares[1].Toe && Squares[1].Toe == Squares[2].Toe && Squares[0].Toe != Toe._;
+            }
+        }
+        public bool Full
+        {
+            get
+            {
+                return Squares.All(x => x.Toe != Toe._);
             }
         }
 
@@ -281,7 +300,7 @@ namespace TicTacToe
 
     public enum Result
     {
-        Playing, Victory, Defeated
+        Playing, Victory, Defeated, Draw
     }
 
 }
