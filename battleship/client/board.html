@@ -1,0 +1,11 @@
+
+<table>
+    <tr ng-repeat='column in board.positions'>
+        <td class={{place.type}}
+         ng-repeat='place in column track by place.id' 
+         ng-click="shot(place.id)"
+         style="cursor:pointer">
+            {{place.id}}
+        </td>
+    </tr>
+</table>
