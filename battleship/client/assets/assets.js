@@ -1,5 +1,4 @@
-(function(angular){
-    
+(function(angular){    
        var initialModules = [
   {name: 'app', deps: ['angular-meteor']}
 ];
@@ -12,15 +11,11 @@ angular.findModule=function(moduleName, deps) {
   } catch (error) {
     return angular.module(moduleName, deps);
   }
-}
-    
- 
+}   
 
 initialModules.forEach(function(moduleDefinition) {
   angular.findModule(moduleDefinition.name, moduleDefinition.deps);
-});
-
-    
+});  
     
     
 }(window.angular));

@@ -14,16 +14,23 @@
     </div>
     <div class="row">
         
-      <div class="col-sm-3 col-md-2 bg-success" id="chat">
-        chat        
-      </div>
+      <div class="col-sm-3 col-md-2 bg-success" ng-controller="chatController as vm">
+        chat    
+        
+        <div ng-repeat="b in vm.boards">{{b._id}}</div> 
+      </div> 
       
       <div class="col-sm-8" ng-controller='boardController as vm'>
-        <div board='vm.board'/>        
+       <button ng-click="vm.generate('main-board')">Generate</button>
+  <div board='vm.mainBoard' name="main-board"/>  
+        
       </div>
-      
+
       <div class="col-sm-8" ng-controller='boardController as vm'>
-        <div board='vm.board'/>        
+       <button ng-click="vm.generate('sub-board')">Generate</button>
+       
+        <div board='vm.subBoard' name="sub-board"/>  
+       
       </div>
       
     </div>

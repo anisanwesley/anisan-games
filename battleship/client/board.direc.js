@@ -7,6 +7,7 @@ angular.findModule('app')
    
    var _factory;
    var boardSize = 10;
+   var _$scope;
    
         var hitsMade,
             hitsToWin;
@@ -21,13 +22,20 @@ angular.findModule('app')
         controller:controller,
         scope:{
             board:"=",
+            name:"@",
         }
     };
-   function controller(factory){
-       _factory=factory
+    controller.$inject=['$scope','factory'];
+   function controller($scope,factory){
+       _factory = factory;
+       _$scope = $scope;
    }
     
     function link(scope){
+               
+               _$scope.$on(scope.name,function(){
+                   distributeShips();
+               })
                
       var  board = scope.board;
         scope.shot=shot;
@@ -55,11 +63,11 @@ angular.findModule('app')
         }
         
         distributeShips();
-        
-    
     
     
     function distributeShips() {
+        clearBoard()
+        
         var pos, shipPlaced, vertical;
         for (var i = 0, l = ships.length; i < l; i++) {
             shipPlaced = false;
@@ -69,6 +77,12 @@ angular.findModule('app')
                 shipPlaced = placeShip(pos, ships[i], vertical);
             }
         }
+    }
+    
+    function clearBoard(){
+        for(var x =0 ; x < boardSize; x+=1)
+            for(var y =0 ; y < boardSize; y+=1)
+                board.positions[y][x].type = '';
     }
     function randomBoolean() {
         return (Math.round(Math.random()) == 1);
