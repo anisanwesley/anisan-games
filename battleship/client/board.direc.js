@@ -8,6 +8,7 @@ angular.findModule('app')
    var _factory;
    var boardSize = 10;
    var _$scope;
+  
    
         var hitsMade,
             hitsToWin;
@@ -37,9 +38,12 @@ angular.findModule('app')
                    distributeShips();
                })
                
-      var  board = scope.board;
-        scope.shot=shot;
+            var board = scope.board;
+            scope.shot=shot;
         
+         if(scope.board._id) return;
+       
+       
         ships = [
             new _factory.Ship(2),
             new _factory.Ship(3),
@@ -62,6 +66,7 @@ angular.findModule('app')
             hitsToWin += ships[i];
         }
         
+       
         distributeShips();
     
     
@@ -145,7 +150,7 @@ angular.findModule('app')
             hitsMade++;
         } else place.type = 'miss';
     }
-}
+    }
 })
 
 

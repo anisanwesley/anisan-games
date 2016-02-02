@@ -5,21 +5,17 @@ angular.findModule('app')
 .controller('boardController',function($rootScope){
     
     function activate(){
-   //    vm.mainBoard = Boards.find({_id:'9Yu7uX7kyd72FdAyT'});
-   //    vm.subBoard = Boards.find({_id:'maAejW4cMKrYoFbhc'});
+    //   vm.mainBoard = Boards.findOne('9Yu7uX7kyd72FdAyT');
+    //   vm.subBoard = Boards.findOne('maAejW4cMKrYoFbhc');
     }
     
     
+    
+    
     var vm = this;
-    vm.mainBoard = {
-       positions:[]
-   };
-   
-   
-    vm.subBoard = {
-       positions:[]
-   };
-
+    vm.subBoard={positions:[]};
+    vm.mainBoard={positions:[]};
+ 
     activate();
     
     vm.insert=function(){
