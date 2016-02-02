@@ -5,8 +5,8 @@ angular.findModule('app')
 .controller('boardController',function($rootScope){
     
     function activate(){
-       vm.mainBoard = Boards.find({_id:'9Yu7uX7kyd72FdAyT'});
-       vm.subBoard = Boards.find({_id:'maAejW4cMKrYoFbhc'});
+   //    vm.mainBoard = Boards.find({_id:'9Yu7uX7kyd72FdAyT'});
+   //    vm.subBoard = Boards.find({_id:'maAejW4cMKrYoFbhc'});
     }
     
     
